@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Disease Predicting</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="Ressources\126491886_822615775188751_2479819672639039491_n.png">
+    
+  
+</head>
+
+<body class="d">
+  <nav>
+    <a href="index.html"><img id="logo" src="Ressources/126483649_412501270130825_7942744715365716275_n.png" alt="" width="10%"></a>
+    <a id="links" href="index.html">Problems</a>
+    <a id="links" href="dataset.html">About the dataset</a>
+    <a id="links" href="predictions.html">Predictions</a>
+  </nav>
+      <div class="login">
+        <h1>Life Expectancy Prediction</h1>
+    
+         <!-- Main Input For Receiving Query to our ML " -->
+        <form name="prediction"  method="post" action="{{ url_for('predict')}}" onsubmit="return ValidateForm(event)">
+            <input type="text" name="GDP" placeholder="GDP"  />
+            <input type="text" name="Status" placeholder="Status"  />
+            <input type="text" name="HIV" placeholder="HIV/AIDS"  />
+            <input type="text"name="ICR" placeholder="Income composition of resources" >
+            <input type="text"name="Schooling" placeholder="Schooling" >
+            <input type="text"name="AM" placeholder="Adult Mortality">
+            <input type="text"name="Alcohol" placeholder="Alcohol" >
+            <input type="text"name="PE" placeholder="Percentage expenditure" >
+    
+    
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+    
+       <br>
+       <br>
+       {{ prediction_text }}
+       <br><br>
+         
+
+
+     
+     <script src="javascript.js"></script>
+</body>
+</html>
